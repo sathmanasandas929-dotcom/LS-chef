@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LS Restaurant</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  .fadeIn { animation: fadeIn 1s ease-in-out; }
+</style>
+</head>
+<body class="bg-yellow-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500">
+
+<!-- Navigation -->
+<nav class="flex justify-center gap-6 p-4 bg-white dark:bg-gray-800 shadow rounded-2xl mb-6">
+  <a href="#home" class="text-lg font-semibold">Home</a>
+  <a href="#menu" class="text-lg font-semibold">Menu</a>
+  <a href="#cart" class="text-lg font-semibold">Cart</a>
+  <a href="#contact" class="text-lg font-semibold">Contact</a>
+  <button onclick="document.body.classList.toggle('dark')" class="ml-4 px-3 py-1 bg-gray-300 dark:bg-gray-700 rounded">Toggle Dark Mode</button>
+</nav>
+
+<!-- Welcome Banner -->
+<section id="home" class="text-center p-10 bg-gradient-to-br from-yellow-100 to-orange-100 fadeIn">
+  <h1 class="text-5xl font-bold mb-4">LS Restaurant 🍽️</h1>
+  <p class="text-xl mb-6">Delicious takeaway food delivered to your doorstep!</p>
+</section>
+
+<!-- Menu Section -->
+<section id="menu" class="p-10 fadeIn">
+  <h2 class="text-4xl font-bold mb-6 text-center">Food Menu</h2>
+  <div class="grid md:grid-cols-3 gap-6">
+    <!-- Menu items -->
+    <div class="bg-white dark:bg-gray-700 rounded-2xl shadow p-4 hover:scale-105 transition-transform">
+      <img src="‪C:\Users\sanda\Downloads\download (24).jpg‪" alt="Achcharu" class="rounded-xl w-full h-40 object-cover mb-2">
+      <h3 class="text-xl font-bold">Achcharu</h3>
+      <p>Rs. 150</p>
+      <button onclick="addToCart('Achcharu',150)" class="bg-orange-500 text-white px-4 py-2 rounded mt-2">Add</button>
+    </div>
+    <div class="bg-white dark:bg-gray-700 rounded-2xl shadow p-4 hover:scale-105 transition-transform">
+      <img src="C:\Users\sanda\Downloads\download (25).jpg" alt="Brinjal Moju" class="rounded-xl w-full h-40 object-cover mb-2">
+      <h3 class="text-xl font-bold">Brinjal Moju</h3>
+      <p>Rs. 200</p>
+      <button onclick="addToCart('Brinjal Moju',200)" class="bg-orange-500 text-white px-4 py-2 rounded mt-2">Add</button>
+    </div>
+    <div class="bg-white dark:bg-gray-700 rounded-2xl shadow p-4 hover:scale-105 transition-transform">
+      <img src="C:\Users\sanda\Downloads\download (26).jpg" alt="Umbalakada Sombole" class="rounded-xl w-full h-40 object-cover mb-2">
+      <h3 class="text-xl font-bold">Umbalakada Sombole</h3>
+      <p>Rs. 120</p>
+      <button onclick="addToCart('Umbalakada Sombole',120)" class="bg-orange-500 text-white px-4 py-2 rounded mt-2">Add</button>
+    </div>
+    <div class="bg-white dark:bg-gray-700 rounded-2xl shadow p-4 hover:scale-105 transition-transform">
+      <img src="C:\Users\sanda\Downloads\images (8).jpg" alt="Biriyani" class="rounded-xl w-full h-40 object-cover mb-2">
+      <h3 class="text-xl font-bold">Biriyani</h3>
+      <p>Rs. 980</p>
+      <button onclick="addToCart('Biriyani',980)" class="bg-orange-500 text-white px-4 py-2 rounded mt-2">Add</button>
+    </div>
+    <div class="bg-white dark:bg-gray-700 rounded-2xl shadow p-4 hover:scale-105 transition-transform">
+      <img src="C:\Users\sanda\Downloads\download (29).jpg" alt="Bun" class="rounded-xl w-full h-40 object-cover mb-2">
+      <h3 class="text-xl font-bold">Bun</h3>
+      <p>Rs. 160</p>
+      <button onclick="addToCart('Bun',160)" class="bg-orange-500 text-white px-4 py-2 rounded mt-2">Add</button>
+    </div>
+    <div class="bg-white dark:bg-gray-700 rounded-2xl shadow p-4 hover:scale-105 transition-transform">
+      <img src="C:\Users\sanda\Downloads\images (10).jpg" alt="Rice and Curry" class="rounded-xl w-full h-40 object-cover mb-2">
+      <h3 class="text-xl font-bold">Rice and Curry</h3>
+      <p>Rs. 350</p>
+      <button onclick="addToCart('Rice and Curry',350)" class="bg-orange-500 text-white px-4 py-2 rounded mt-2">Add</button>
+    </div>
+    <div class="bg-white dark:bg-gray-700 rounded-2xl shadow p-4 hover:scale-105 transition-transform">
+      <img src="C:\Users\sanda\Downloads\download (30).jpg" alt="Fried Rice" class="rounded-xl w-full h-40 object-cover mb-2">
+      <h3 class="text-xl font-bold">Fried Rice</h3>
+      <p>Rs. 900</p>
+      <button onclick="addToCart('Fried Rice',900)" class="bg-orange-500 text-white px-4 py-2 rounded mt-2">Add</button>
+    </div>
+    <div class="bg-white dark:bg-gray-700 rounded-2xl shadow p-4 hover:scale-105 transition-transform">
+      <img src="C:\Users\sanda\Downloads\images (9).jpg" alt="Kottu" class="rounded-xl w-full h-40 object-cover mb-2">
+      <h3 class="text-xl font-bold">Kottu</h3>
+      <p>Rs. 900</p>
+      <button onclick="addToCart('Kottu',900)" class="bg-orange-500 text-white px-4 py-2 rounded mt-2">Add</button>
+    </div>
+  </div>
+</section>
+
+<!-- Cart & Checkout Section -->
+<section id="cart" class="p-10 fadeIn">
+  <h2 class="text-4xl font-bold mb-6 text-center">Your Cart</h2>
+  <div id="cart-items" class="max-w-xl mx-auto mb-4"></div>
+  <div class="text-center mb-6 text-xl font-bold">Total: Rs. <span id="total">0</span></div>
+  
+  <!-- Checkout Form -->
+  <form id="checkout-form" class="max-w-xl mx-auto bg-white dark:bg-gray-700 p-6 rounded-2xl shadow">
+    <h3 class="text-2xl font-bold mb-4">Checkout</h3>
+    <label class="block mb-2">Name:</label>
+    <input type="text" id="customer-name" class="w-full mb-4 p-2 rounded border" required>
+    <label class="block mb-2">Phone:</label>
+    <input type="text" value="0775968394" class="w-full mb-4 p-2 rounded border" readonly>
+    <label class="block mb-2">Card Number:</label>
+    <input type="text" class="w-full mb-4 p-2 rounded border" placeholder="1234 5678 9012 3456" required>
+    <label class="block mb-2">Expiry:</label>
+    <input type="text" class="w-full mb-4 p-2 rounded border" placeholder="MM/YY" required>
+    <label class="block mb-2">CVV:</label>
+    <input type="text" class="w-full mb-4 p-2 rounded border" placeholder="123" required>
+    <button type="submit" class="bg-green-500 text-white px-6 py-3 rounded-2xl hover:bg-green-600">Pay Now</button>
+  </form>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="p-10 text-center fadeIn">
+  <h2 class="text-4xl font-bold mb-4">Contact Us</h2>
+  <p class="text-lg mb-2">Phone: 0775968394</p>
+  <p class="text-lg mb-2">Email: sathmanasandas929@gmail.com</p>
+  <p class="text-lg">Address: 50/i batagama north ja ela in front of rsk fitness</p>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 p-6 text-center mt-10 rounded-2xl shadow">
+  © 2025 LS Restaurant. All rights reserved.
+</footer>
+
+<!-- JavaScript for cart -->
+<script>
+let cart = [];
+function addToCart(name, price){
+  cart.push({name, price});
+  renderCart();
+}
+
+function renderCart(){
+  const cartDiv = document.getElementById('cart-items');
+  const totalSpan = document.getElementById('total');
+  cartDiv.innerHTML = '';
+  let total = 0;
+  cart.forEach((item, index) => {
+    total += item.price;
+    cartDiv.innerHTML += '<div class="flex justify-between border-b py-2"><span>'+item.name+'</span><span>Rs. '+item.price+'</span></div>';
+  });
+  totalSpan.textContent = total;
+}
+
+// Handle checkout form submission
+document.getElementById('checkout-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  alert('Payment Successful! Thank you for your order, ' + document.getElementById('customer-name').value);
+  cart = [];
+  renderCart();
+  this.reset();
+});<!-- Login functionality (anyone can log in) -->
+<script>
+  
+
+
+  }
+});
+</script>
+
+
+</script>
+
+</body>
+</html>           
+
+
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - LS Restaurant</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { transition: background-color 0.3s; }
+  #login-overlay { 
+    position: fixed; inset: 0; 
+    background-color: rgba(0,0,0,0.5); 
+    display: flex; justify-content: center; align-items: center; 
+    z-index: 50; 
+  }
+  .fadeIn { animation: fadeIn 0.8s ease-in-out; }
+  @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+</style>
+</head>
+<body class="bg-yellow-50 dark:bg-gray-900">
+
+<!-- Login Form Overlay -->
+<div id="login-overlay" class="fadeIn">
+  <div class="bg-white dark:bg-gray-700 p-8 rounded-2xl shadow-lg w-96">
+    <h2 class="text-2xl font-bold mb-4 text-center">Login to LS Restaurant</h2>
+    <form id="login-form">
+      <label class="block mb-2">Your Name:</label>
+      <input type="text" id="username" class="w-full mb-4 p-2 rounded border" placeholder="Enter your name" required>
+      <button type="submit" class="w-full bg-blue-500 text-white px-6 py-2 rounded-2xl hover:bg-blue-600">Login</button>
+    </form>
+  </div>
+</div>
+
+<script>
+// Simple login functionality: anyone can log in
+document.getElementById('login-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  const username = document.getElementById('username').value.trim();
+  if(!username) return alert('Please enter your name.');
+  
+  // Hide overlay on login
+  document.getElementById('login-overlay').style.display = 'none';
+  alert(`Welcome, ${username}!`);
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
